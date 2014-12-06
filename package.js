@@ -7,11 +7,22 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
-  api.addFiles('braintree-payments.js');
+  api.use('cwohlman:payments@0.1.0');
+
+  Npm.depends({
+    'braintree': '1.21.0'
+  });
+
+  api.imply('cwohlman:payments');
+
+  api.addFiles('provider/config.js');
+  api.addFiles('provider/client.html', ['client']);
+  api.addFiles('provider/generateClientToken.js');
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
   api.use('cwohlman:braintree-payments');
-  api.addFiles('braintree-payments-tests.js');
+
+  api.addFiles('tests/config.js');
 });
