@@ -1,3 +1,7 @@
+Warning
+===================
+This package is not complete, not compatibable with the latest cwohlman:payments package, and not activly maintained.
+
 Bulletproof Payments using Braintree
 ====================
 
